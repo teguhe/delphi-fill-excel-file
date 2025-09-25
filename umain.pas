@@ -5,7 +5,7 @@ interface
 uses
 
   //additional
-  ComObj,
+  ComObj, Winapi.ShellAPI,
 
   //autogenerate
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
@@ -37,6 +37,10 @@ procedure TForm1.btnSendToNewFileClick(Sender: TObject);
 var
    ExcelFileName, ExcelFileNameNew: String;
    ExcelApplication, ExcelWorkbook, ExcelWorksheet: Variant;
+
+   ExcelFile : Variant;
+   WorkBook : Variant;
+   WorkSheet : Variant;
 begin
      //be sure ComObj and Variants units are included in the "uses" clause
 
@@ -106,6 +110,9 @@ begin
                     ExcelApplication := Unassigned;
              end;
         end;
+
+  ShellExecute(0, 'open', PChar(ExcelFileNameNew), nil, nil, SW_SHOWNORMAL);
+
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
