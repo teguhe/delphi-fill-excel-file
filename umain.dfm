@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  ClientHeight = 442
+  ClientHeight = 233
   ClientWidth = 628
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -34,5 +34,22 @@ object Form1: TForm1
     Height = 25
     Caption = 'Send To New File'
     TabOrder = 1
+    OnClick = btnSendToNewFileClick
+  end
+  object edSource: TEdit
+    Left = 24
+    Top = 144
+    Width = 585
+    Height = 23
+    TabOrder = 2
+    Text = 'edSource'
+  end
+  object edTarget: TEdit
+    Left = 24
+    Top = 173
+    Width = 585
+    Height = 23
+    TabOrder = 3
+    Text = 'Edit1'
   end
 end
